@@ -66,6 +66,7 @@ void	mergeSort(std::vector<int> &v)
 int main()
 {
 	std::vector<int> tmp{27, 10, 12, 20, 25, 13, 15, 22};
+
 	mergeSort(tmp);
 	print_vector(tmp);
 }
