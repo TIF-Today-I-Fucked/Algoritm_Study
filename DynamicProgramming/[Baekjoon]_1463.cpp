@@ -12,6 +12,7 @@ int	make_one(std::vector<int>& memory, int num)
 	memory.push_back(0);
 	while (++idx <= num)
 	{
+		std::cout << "idx : " << idx << std::endl;
 		if (idx == 1)
 		{
 			memory.push_back(0);
