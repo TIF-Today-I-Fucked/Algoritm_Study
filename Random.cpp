@@ -6,7 +6,7 @@
 int main()
 {
     srand(time(NULL));
-    std::vector<int> tests{1074, 1629, 1780, 2751, 11728};
+    std::vector<int> tests{1074, 1629, 1780};
     int a = rand() % tests.size();
     int b = rand() % tests.size();
 
