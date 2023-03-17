@@ -24,7 +24,9 @@ unsigned long long	tile(unsigned long long num)
 			v.push_back(2);
 			continue;
 		}
-		v.push_back((v[idx - 1] + v[idx - 2]) % 10007);
+		std::cout << "idx[" << idx << "] " << v[idx - 1] << " " << v[idx - 2] << std::endl;
+		// v.push_back((v[idx - 1] + v[idx - 2]) % 10007);
+		v.push_back((v[idx - 1] + v[idx - 2]));
 	}
 	return v[idx - 1];
 }
@@ -33,5 +35,6 @@ int main()
 {
 	int	num;
 	std::cin >> num;
-	std::cout << tile(num);
+	std::cout << tile(num) % 10007;
+	// std::cout << tile(num);
 }
