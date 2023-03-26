@@ -3,44 +3,36 @@
 
 int main()
 {
-    unsigned int	num_of_stairs;
-	bool			flag {false};
+	int NumOfStairs;
 
-    std::cin >> num_of_stairs;
-	if (num_of_stairs < 1)
-		return 0;
+	std::cin >> NumOfStairs;
 
-    std::vector<int> scores(num_of_stairs);
-    std::vector<int> record(num_of_stairs);
+	std::vector<int> StairScores(NumOfStairs);
 
-    for (int i = 1 ; i <= num_of_stairs ; i++)
-        std::cin >> scores[num_of_stairs - i];
-	
+	for (auto it = StairScores.end() - 1 ; it >= StairScores.begin() ; --it)
+		std::cin >> *it;
 
-	/**
-	* 연산은 두가지.
-		1. 전전 기록과 현재 스코어를 더한 것과 전 기록을 비교해서 큰 것 가져가기
-		2. 전 기록과 현재 스코어 더해서 가져가기
-
-	  경우는 두가지
-		1. flag : true -> 1번쨰 연산 수행 후, 전전기록과 현재스코어를 더한 것인 선택되면 flag==>false
-		2. flag : false -> 2번쨰 연산 수행 후 flag==>true
-	*/
-	record.at(0) = scores.at(0);
-	for (int i = 1 ; i < scores.size() ; i++)
+	if (NumOfStairs == 1)
+		return StairScores[0];
+	else if (NumOfStairs == 2)
+		return StairScores[0] + StairScores[1];
+	else if (NumOfStairs == 3)
+		return StairScores[0] + std::max<int>(StairScores[1] , StairScores[2]);
+	std::vector<int> MaxScores(NumOfStairs);
+	MaxScores[0] = StairScores[0];
+	MaxScores[1] = StairScores[0] + StairScores[1];
+	MaxScores[2] = StairScores[0] + std::max<int>(StairScores[1] , StairScores[2]);
+	std::cout << MaxScores[0] << " ";
+	std::cout << MaxScores[1] << " ";
+	for (int i = 3; i < NumOfStairs ; i++)
 	{
-		if (flag == false)
+		MaxScores[i] = MaxScores[i - 3] + StairScores[i - 1] + StairScores[i];
+		if (MaxScores[i] < MaxScores[i - 2] + StairScores[i])
 		{
-			record.at(i) = scores.at(i) + record.at(i - 1);
-			flag = true;
+			MaxScores[i] = MaxScores[i - 2] + StairScores[i];
 		}
-		else
-		{
-			// 전전 기록 + 현재 스코어가 더 큰 경우
-			if (record.at(i - 1) < (record.at(i - 2) + scores.at(i)))
-				flag = false;
-			record.at(i) = flag ? record.at(i - 1) : (record.at(i - 2) + scores.at(i));
-		}
+		std::cout << MaxScores[i] << " ";
 	}
-	std::cout << record[num_of_stairs - 1];
+	std::cout << std::endl;
+	std::cout << *(MaxScores.end() - 1); 	
 }
