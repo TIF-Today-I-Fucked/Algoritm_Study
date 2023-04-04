@@ -9,28 +9,28 @@
 
 int main()
 {
-	int	num, tmp;
-	std::vector<int> v;
-	std::vector<int> res;
+    int num, tmp;
+    std::vector<int> v;
+    int res;
 
-	std::cin >> num;
-	for (int i = 0; i < num; i++)
-	{
-		std::cin >> tmp;
-		v.push_back(tmp);
-	}
+    std::cin >> num;
+    for (int i = 0; i < num; i++)
+    {
+        std::cin >> tmp;
+        v.push_back(tmp);
+    }
 
-	for (int i = 0; i < num; i++)
-	{
-		std::vector<int> tmp;
-		int tmp_num(0), res_tmp(0);
-		for (int j = i; j >= 0; j--)
-		{
-			tmp_num += v[j];
-			res_tmp = tmp_num > res_tmp ? tmp_num : res_tmp;
-		}
-		res.push_back(res_tmp);
-	}
-	std::sort(res.begin(), res.end());
-	std::cout << res[res.size() - 1];
+    res = v[0];
+    int sum = 0;
+    for (int i = 0; i < num; i++)
+    {
+        sum += v[i];
+        res = std::max(res, sum);
+        if (sum < 0)
+        {
+            sum = 0;
+        }
+    }
+
+    std::cout << res;
 }
