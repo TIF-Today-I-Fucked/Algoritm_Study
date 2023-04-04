@@ -10,8 +10,7 @@ void	sugar_box(int num, int res)
 {
 	if (num < 3)
 	{
-		res = -1;
-		std::cout << res;
+		std::cout << -1;
 		return ;
 	}
 	if (num % 5 == 0)
