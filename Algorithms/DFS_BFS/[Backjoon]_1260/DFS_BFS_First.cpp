@@ -1,3 +1,8 @@
+/*
+	백준 주소 : https://www.acmicpc.net/problem/1260
+	난이도 : 실버2
+*/
+
 #include <iostream>
 #include <algorithm>
 #include <stack>
