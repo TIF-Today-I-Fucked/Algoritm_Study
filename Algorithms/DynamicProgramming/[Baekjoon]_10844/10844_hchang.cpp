@@ -19,13 +19,6 @@ int main()
 	tmp = {1, 2, 2, 2, 2, 2, 2, 2, 2, 1};
 	arr.push_back(tmp);
 
-	//std::cout << "=======================\n";
-	//for (int i = 0; i < 10; i++)
-	//{
-	//	std::cout << arr[1][i] << " ";
-	//}
-	//std::cout << "\n=======================\n";
-
 	for (int i = 2; i < num; i++)
 	{
 		std::vector<unsigned long long> tmp(0);
