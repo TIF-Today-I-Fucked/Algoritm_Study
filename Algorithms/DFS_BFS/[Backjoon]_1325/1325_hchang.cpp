@@ -66,13 +66,13 @@ int main()
 		res.push_back(tmp);
 	}
 
-	std::sort(res.begin(), res.end(), compare);
+	//std::sort(res.begin(), res.end(), compare);
 
-	int tmp = res[0].second;
-	for (int i = 0; i < node; i++)
-	{
-		if (tmp != res[i].second)
-			break;
-		std::cout << res[i].first << " ";
-	}
+	//int tmp = res[0].second;
+	//for (int i = 0; i < node; i++)
+	//{
+	//	if (tmp != res[i].second)
+	//		break;
+	//	std::cout << res[i].first << " ";
+	//}
 }
