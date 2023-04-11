@@ -4,6 +4,8 @@
 	문제 이름 : 효율적인 해킹
 */
 
+
+#include <functional>
 #include <iostream>
 #include <algorithm>
 #include <queue>
@@ -55,12 +57,13 @@ int	main()
 	{
 		ans[i] = bfs(i);
 	}
-	//const int max = *max_element(ans.begin(), ans.end());
-	//for (int i(0); i < ans.size(); ++i)
-	//{
-	//	if (ans[i] == max)
-	//		cout << i << " ";
-	//}
+
+	const int max = *max_element(ans.begin(), ans.end());
+	for (int i(0); i < ans.size(); ++i)
+	{
+		if (ans[i] == max)
+			cout << i << " ";
+	}
 
 	//해킹 가능한 최대 컴퓨터 수 구하기
     int maxHack = -1; 
