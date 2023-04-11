@@ -4,6 +4,7 @@
 	문제 이름 : 효율적인 해킹
 */
 
+
 #include <functional>
 #include <iostream>
 #include <algorithm>
@@ -56,6 +57,7 @@ int	main()
 	{
 		ans[i] = bfs(i);
 	}
+
 	const int max = *max_element(ans.begin(), ans.end());
 	for (int i(0); i < ans.size(); ++i)
 	{
