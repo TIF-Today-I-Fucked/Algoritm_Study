@@ -1,6 +1,7 @@
 /*
 	백준 주소 : https://www.acmicpc.net/problem/2667
 	난이도 : 실버1
+	문제 이름 : 단지번호붙이기
 */
 
 #include <iostream>
