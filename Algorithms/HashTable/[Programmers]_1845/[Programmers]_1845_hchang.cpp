@@ -1,5 +1,5 @@
 /*
-프로그래머스 주소 : https://school.programmers.co.kr/learn/courses/30/lessons/1845
+	프로그래머스 주소 : https://school.programmers.co.kr/learn/courses/30/lessons/1845
 */
 
 #include <vector>
